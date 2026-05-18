@@ -1,8 +1,10 @@
 package com.conectatarot.backend.service;
 
 import com.conectatarot.backend.dto.TarotistaResponseDTO;
+import com.conectatarot.backend.entity.Rol;
 import com.conectatarot.backend.entity.Tarotista;
 import com.conectatarot.backend.entity.Usuario;
+import com.conectatarot.backend.repository.RolRepository;
 import com.conectatarot.backend.repository.TarotistaRepository;
 import com.conectatarot.backend.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,21 +19,43 @@ public class TarotistaService {
 
     private final TarotistaRepository tarotistaRepository;
     private final UsuarioRepository usuarioRepository;
+    private final RolRepository rolRepository;
 
-    public Tarotista crearTarotista(Integer usuarioId, String nombreProfesional) {
+    public Tarotista crearTarotista(
+            Integer usuarioId,
+            String nombreProfesional
+    ) {
 
         Usuario usuario = usuarioRepository.findById(usuarioId)
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+                .orElseThrow(() ->
+                        new RuntimeException("Usuario no encontrado")
+                );
 
-        boolean yaExiste = tarotistaRepository.existsByUsuario_IdUsuario(usuarioId);
+        boolean yaExiste =
+                tarotistaRepository.existsByUsuario_IdUsuario(usuarioId);
+
         if (yaExiste) {
-            throw new RuntimeException("El usuario ya tiene un perfil de tarotista");
+
+            throw new RuntimeException(
+                    "El usuario ya tiene un perfil de tarotista"
+            );
         }
+
+        Rol rolTarotista = rolRepository.findByNombreRol("TAROTISTA")
+                .orElseThrow(() ->
+                        new RuntimeException("Rol TAROTISTA no encontrado")
+                );
+
+        usuario.setRol(rolTarotista);
+
+        usuarioRepository.save(usuario);
 
         Tarotista tarotista = Tarotista.builder()
                 .usuario(usuario)
                 .nombreProfesional(nombreProfesional)
                 .estado("PENDIENTE")
+                .descripcion("")
+                .precioBase(BigDecimal.ZERO)
                 .build();
 
         return tarotistaRepository.save(tarotista);
@@ -43,39 +67,74 @@ public class TarotistaService {
             String descripcion,
             BigDecimal precioBase
     ) {
+
         Tarotista tarotista = tarotistaRepository.findById(tarotistaId)
-                .orElseThrow(() -> new RuntimeException("Tarotista no encontrado"));
+                .orElseThrow(() ->
+                        new RuntimeException("Tarotista no encontrado")
+                );
 
-        if (!tarotista.getUsuario().getEmail().equals(emailUsuarioLogueado)) {
-            throw new RuntimeException("No tienes permiso para editar este perfil");
+        if (!tarotista.getUsuario()
+                .getEmail()
+                .equals(emailUsuarioLogueado)) {
+
+            throw new RuntimeException(
+                    "No tienes permiso para editar este perfil"
+            );
         }
 
-        if (descripcion == null || descripcion.length() < 20) {
-            throw new RuntimeException("La descripción debe tener al menos 20 caracteres");
+        if (descripcion == null ||
+                descripcion.trim().length() < 20) {
+
+            throw new RuntimeException(
+                    "La descripción debe tener al menos 20 caracteres"
+            );
         }
 
-        if (precioBase == null || precioBase.compareTo(BigDecimal.ZERO) <= 0) {
-            throw new RuntimeException("El precio base debe ser mayor a 0");
+        if (descripcion.trim().length() > 500) {
+
+            throw new RuntimeException(
+                    "La descripción no puede superar los 500 caracteres"
+            );
         }
 
-        tarotista.setDescripcion(descripcion);
-        tarotista.setPrecioBase(precioBase);
+        if (precioBase == null ||
+                precioBase.compareTo(BigDecimal.ZERO) <= 0) {
+
+            throw new RuntimeException(
+                    "El precio base debe ser mayor a 0"
+            );
+        }
+
+        tarotista.setDescripcion(
+                descripcion.trim()
+        );
+
+        tarotista.setPrecioBase(
+                precioBase
+        );
 
         return tarotistaRepository.save(tarotista);
     }
 
-    public List<TarotistaResponseDTO> buscarTarotistas(String especialidad) {
+    public List<TarotistaResponseDTO> buscarTarotistas(
+            String especialidad
+    ) {
 
         List<Tarotista> tarotistas;
 
-        if (especialidad != null && !especialidad.isBlank()) {
+        if (especialidad != null &&
+                !especialidad.isBlank()) {
+
             tarotistas = tarotistaRepository
                     .findByEstadoIgnoreCaseAndTarotistaEspecialidades_Especialidad_NombreContainingIgnoreCase(
                             "APROBADO",
                             especialidad
                     );
+
         } else {
-            tarotistas = tarotistaRepository.findByEstadoIgnoreCase("APROBADO");
+
+            tarotistas =
+                    tarotistaRepository.findByEstadoIgnoreCase("APROBADO");
         }
 
         return tarotistas.stream()
@@ -83,7 +142,10 @@ public class TarotistaService {
                 .toList();
     }
 
-    private TarotistaResponseDTO convertirADTO(Tarotista tarotista) {
+    private TarotistaResponseDTO convertirADTO(
+            Tarotista tarotista
+    ) {
+
         return TarotistaResponseDTO.builder()
                 .id(tarotista.getId())
                 .nombreProfesional(tarotista.getNombreProfesional())
@@ -93,7 +155,9 @@ public class TarotistaService {
                 .especialidades(
                         tarotista.getTarotistaEspecialidades()
                                 .stream()
-                                .map(relacion -> relacion.getEspecialidad().getNombre())
+                                .map(relacion ->
+                                        relacion.getEspecialidad().getNombre()
+                                )
                                 .toList()
                 )
                 .build();

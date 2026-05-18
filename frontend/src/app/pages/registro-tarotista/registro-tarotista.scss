@@ -1,3 +1,24 @@
+.user-info {
+  margin: 0 0 18px;
+  text-align: center;
+  color: #eadfff;
+  font-size: 0.92rem;
+}
+
+.success-message {
+  margin-top: 14px;
+  text-align: center;
+  color: #b8ffcf;
+  font-size: 0.95rem;
+}
+
+.error-message {
+  margin-top: 14px;
+  text-align: center;
+  color: #ffb4b4;
+  font-size: 0.95rem;
+}
+
 :host {
   display: block;
 }

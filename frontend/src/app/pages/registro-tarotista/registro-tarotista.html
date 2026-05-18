@@ -1,0 +1,42 @@
+<div class="login-page">
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <section class="login-card">
+    <div class="icon-row">
+      <div class="moon"></div>
+      <div class="star star-one">✦</div>
+      <div class="star star-two">✧</div>
+    </div>
+
+    <h1>Registro Tarotista</h1>
+    <p class="subtitle">Crea tu perfil profesional</p>
+
+    <p class="user-info" *ngIf="user">
+      Sesión activa: <strong>{{ user.nombre }}</strong> ({{ user.email }})
+    </p>
+
+    <div class="login-form">
+      <label for="nombreProfesional">Nombre profesional</label>
+      <input
+        id="nombreProfesional"
+        type="text"
+        [(ngModel)]="nombreProfesional"
+        placeholder="Ej: Luna Mística"
+      />
+
+      <button type="button" (click)="registrar()" [disabled]="loading">
+        {{ loading ? 'Guardando...' : 'Crear perfil' }}
+      </button>
+    </div>
+
+    <p *ngIf="error" class="error-message">{{ error }}</p>
+    <p *ngIf="success" class="success-message">{{ success }}</p>
+
+    <p class="register-text">Tu perfil quedará pendiente de aprobación.</p>
+
+    <a routerLink="/cliente" class="register-link">
+      Volver al inicio
+    </a>
+  </section>
+</div>
