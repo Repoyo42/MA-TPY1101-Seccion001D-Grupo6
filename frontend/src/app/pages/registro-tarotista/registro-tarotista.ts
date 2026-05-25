@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser, CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { TarotistaService } from '../../core/services/tarotista';
@@ -14,9 +14,13 @@ import { TarotistaService } from '../../core/services/tarotista';
 export class RegistroTarotista implements OnInit {
 
   nombreProfesional = '';
+  descripcion = '';
+  precioBase: number | null = null;
+
   error = '';
   success = '';
   loading = false;
+
   user: any = null;
 
   constructor(
@@ -36,10 +40,11 @@ export class RegistroTarotista implements OnInit {
       this.user = JSON.parse(rawUser);
     } else {
       this.error = 'Debes iniciar sesión para crear tu perfil de tarotista';
+      this.router.navigate(['/login']);
     }
   }
 
-  registrar() {
+  registrar(): void {
     this.error = '';
     this.success = '';
 
@@ -53,6 +58,21 @@ export class RegistroTarotista implements OnInit {
       return;
     }
 
+    if (this.descripcion.trim().length < 20) {
+      this.error = 'La descripción debe tener al menos 20 caracteres';
+      return;
+    }
+
+    if (this.descripcion.trim().length > 500) {
+      this.error = 'La descripción no puede superar los 500 caracteres';
+      return;
+    }
+
+    if (this.precioBase === null || this.precioBase <= 0) {
+      this.error = 'El precio base debe ser mayor a 0';
+      return;
+    }
+
     this.loading = true;
 
     this.tarotistaService.crearTarotista(
@@ -60,26 +80,46 @@ export class RegistroTarotista implements OnInit {
       this.nombreProfesional.trim()
     ).subscribe({
       next: (res: any) => {
-        this.success =
-          res?.message || 'Tarotista creado correctamente';
-
         const tarotistaId =
           res?.data?.id ||
           res?.data?.tarotistaId ||
           res?.id ||
           null;
 
-        if (tarotistaId) {
-          localStorage.setItem('tarotistaId', String(tarotistaId));
+        if (!tarotistaId) {
+          this.loading = false;
+          this.error = 'Se creó el tarotista, pero no se pudo obtener su ID';
+          return;
         }
 
-        setTimeout(() => {
-          this.router.navigate(['/perfil-tarotista']);
-        }, 1200);
+        localStorage.setItem('tarotistaId', String(tarotistaId));
 
-        this.loading = false;
+        this.tarotistaService.actualizarPerfil(
+          tarotistaId,
+          this.descripcion.trim(),
+          this.precioBase as number
+        ).subscribe({
+          next: (updateRes: any) => {
+            this.success =
+              updateRes?.message || 'Perfil de tarotista creado correctamente';
+
+            setTimeout(() => {
+              this.router.navigate(['/mis-especialidades']);
+            }, 1200);
+
+            this.loading = false;
+          },
+          error: (err: any) => {
+            this.error =
+              err?.error?.message ||
+              err?.error ||
+              'No se pudo guardar el perfil profesional';
+
+            this.loading = false;
+          }
+        });
       },
-      error: (err) => {
+      error: (err: any) => {
         this.error =
           err?.error?.message ||
           err?.error ||

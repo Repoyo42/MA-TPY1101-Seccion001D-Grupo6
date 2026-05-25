@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PerfilTarotista } from './perfil-tarotista';
+import { MisEspecialidades } from './mis-especialidades';
 
-describe('PerfilTarotista', () => {
-  let component: PerfilTarotista;
-  let fixture: ComponentFixture<PerfilTarotista>;
+describe('MisEspecialidades', () => {
+  let component: MisEspecialidades;
+  let fixture: ComponentFixture<MisEspecialidades>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PerfilTarotista],
+      imports: [MisEspecialidades],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PerfilTarotista);
+    fixture = TestBed.createComponent(MisEspecialidades);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

@@ -4,6 +4,9 @@ import com.conectatarot.backend.dto.TarotistaEspecialidadResponseDTO;
 import com.conectatarot.backend.entity.Especialidad;
 import com.conectatarot.backend.entity.Tarotista;
 import com.conectatarot.backend.entity.TarotistaEspecialidad;
+import com.conectatarot.backend.exception.BadRequestException;
+import com.conectatarot.backend.exception.ConflictException;
+import com.conectatarot.backend.exception.NotFoundException;
 import com.conectatarot.backend.repository.EspecialidadRepository;
 import com.conectatarot.backend.repository.TarotistaEspecialidadRepository;
 import com.conectatarot.backend.repository.TarotistaRepository;
@@ -24,48 +27,79 @@ public class TarotistaEspecialidadService {
             Integer tarotistaId,
             Integer especialidadId
     ) {
+
         Tarotista tarotista = tarotistaRepository.findById(tarotistaId)
-                .orElseThrow(() -> new RuntimeException("Tarotista no encontrado"));
+                .orElseThrow(() ->
+                        new NotFoundException("Tarotista no encontrado")
+                );
 
         Especialidad especialidad = especialidadRepository.findById(especialidadId)
-                .orElseThrow(() -> new RuntimeException("Especialidad no encontrada"));
+                .orElseThrow(() ->
+                        new NotFoundException("Especialidad no encontrada")
+                );
 
-        boolean yaExiste = repository.existsByTarotista_IdAndEspecialidad_Id(
-                tarotistaId,
-                especialidadId
-        );
+        boolean yaExiste =
+                repository.existsByTarotista_IdAndEspecialidad_Id(
+                        tarotistaId,
+                        especialidadId
+                );
 
         if (yaExiste) {
-            throw new RuntimeException("El tarotista ya tiene esta especialidad");
+
+            throw new ConflictException(
+                    "El tarotista ya tiene esta especialidad"
+            );
         }
 
-        TarotistaEspecialidad relacion = TarotistaEspecialidad.builder()
-                .tarotista(tarotista)
-                .especialidad(especialidad)
-                .build();
+        TarotistaEspecialidad relacion =
+                TarotistaEspecialidad.builder()
+                        .tarotista(tarotista)
+                        .especialidad(especialidad)
+                        .build();
 
-        return convertirADTO(repository.save(relacion));
+        return convertirADTO(
+                repository.save(relacion)
+        );
     }
 
-    public void eliminarEspecialidad(Integer tarotistaId, Integer especialidadId) {
+    public void eliminarEspecialidad(
+            Integer tarotistaId,
+            Integer especialidadId
+    ) {
 
         TarotistaEspecialidad relacion =
-                repository.findByTarotista_IdAndEspecialidad_Id(tarotistaId, especialidadId)
-                        .orElseThrow(() -> new RuntimeException("Especialidad no asignada al tarotista"));
+                repository.findByTarotista_IdAndEspecialidad_Id(
+                                tarotistaId,
+                                especialidadId
+                        )
+                        .orElseThrow(() ->
+                                new NotFoundException(
+                                        "Especialidad no asignada al tarotista"
+                                )
+                        );
 
-        long totalEspecialidades = repository.countByTarotista_Id(tarotistaId);
+        long totalEspecialidades =
+                repository.countByTarotista_Id(tarotistaId);
 
         if (totalEspecialidades <= 1) {
-            throw new RuntimeException("El tarotista debe tener al menos una especialidad");
+
+            throw new BadRequestException(
+                    "El tarotista debe tener al menos una especialidad"
+            );
         }
 
         repository.delete(relacion);
     }
 
-    public List<TarotistaEspecialidadResponseDTO> listarEspecialidades(Integer tarotistaId) {
+    public List<TarotistaEspecialidadResponseDTO> listarEspecialidades(
+            Integer tarotistaId
+    ) {
 
         if (!tarotistaRepository.existsById(tarotistaId)) {
-            throw new RuntimeException("Tarotista no encontrado");
+
+            throw new NotFoundException(
+                    "Tarotista no encontrado"
+            );
         }
 
         return repository.findByTarotista_Id(tarotistaId)
@@ -74,12 +108,21 @@ public class TarotistaEspecialidadService {
                 .toList();
     }
 
-    private TarotistaEspecialidadResponseDTO convertirADTO(TarotistaEspecialidad relacion) {
+    private TarotistaEspecialidadResponseDTO convertirADTO(
+            TarotistaEspecialidad relacion
+    ) {
+
         return TarotistaEspecialidadResponseDTO.builder()
                 .id(relacion.getId())
-                .especialidadId(relacion.getEspecialidad().getId())
-                .nombre(relacion.getEspecialidad().getNombre())
-                .descripcion(relacion.getEspecialidad().getDescripcion())
+                .especialidadId(
+                        relacion.getEspecialidad().getId()
+                )
+                .nombre(
+                        relacion.getEspecialidad().getNombre()
+                )
+                .descripcion(
+                        relacion.getEspecialidad().getDescripcion()
+                )
                 .build();
     }
 }

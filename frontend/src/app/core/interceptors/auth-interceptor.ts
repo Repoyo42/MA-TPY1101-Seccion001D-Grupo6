@@ -6,27 +6,35 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     return next(req);
   }
 
-  const publicRoutes = [
+  const token = localStorage.getItem('token');
+
+  // URLs públicas exactas
+  const publicUrls = [
     '/api/auth/login',
     '/api/usuarios'
   ];
 
-  const isPublicRoute = publicRoutes.some(route =>
-    req.url.includes(route)
+  const isPublic = publicUrls.some(url =>
+    req.url.includes(url)
   );
 
-  if (isPublicRoute) {
+  // SOLO bloquear token si es público
+  if (isPublic) {
     return next(req);
   }
 
-  const token = localStorage.getItem('token');
+  // DEBUG IMPORTANTE (te ayuda ahora)
+  console.log('Interceptando request:', req.url);
+  console.log('Token existe:', !!token);
 
   if (token) {
-    req = req.clone({
+    const authReq = req.clone({
       setHeaders: {
         Authorization: `Bearer ${token}`
       }
     });
+
+    return next(authReq);
   }
 
   return next(req);

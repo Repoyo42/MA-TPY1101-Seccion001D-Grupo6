@@ -1,0 +1,73 @@
+<div class="login-page">
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <section class="login-card">
+    <div class="icon-row">
+      <div class="moon"></div>
+      <div class="star star-one">✦</div>
+      <div class="star star-two">✧</div>
+    </div>
+
+    <h1>Mis especialidades</h1>
+    <p class="subtitle">Selecciona las categorías que mejor describen tu lectura</p>
+
+    <p class="user-info" *ngIf="user">
+      Hola, <strong>{{ user.nombre }}</strong>
+    </p>
+
+    <p class="counter" *ngIf="especialidades.length">
+      Seleccionadas: <strong>{{ seleccionadas.size }}</strong>
+    </p>
+
+    <div *ngIf="cargando" class="loading-text">
+      Cargando especialidades...
+    </div>
+
+    <div *ngIf="!cargando && especialidades" class="especialidades-list">
+        
+      <label
+        class="especialidad-item"
+        *ngFor="let especialidad of especialidades"
+      >
+        <input
+          type="checkbox"
+          [checked]="estaSeleccionada(especialidad.id)"
+          (change)="cambiarSeleccion(especialidad.id, $any($event.target).checked)"
+        />
+
+        <span class="checkbox-box"></span>
+
+        <span class="especialidad-content">
+          <strong>{{ especialidad.nombre }}</strong>
+          <small *ngIf="especialidad.descripcion">
+            {{ especialidad.descripcion }}
+          </small>
+        </span>
+      </label>
+    </div>
+
+    <div *ngIf="!cargando && especialidades.length === 0" class="empty-state">
+      No hay especialidades disponibles.
+    </div>
+
+    <button
+      type="button"
+      (click)="guardarCambios()"
+      [disabled]="guardando || cargando"
+    >
+      {{ guardando ? 'Guardando...' : 'Guardar cambios' }}
+    </button>
+
+    <p *ngIf="error" class="error-message">{{ error }}</p>
+    <p *ngIf="success" class="success-message">{{ success }}</p>
+
+    <p class="register-text">
+      Puedes volver al inicio cuando termines.
+    </p>
+
+    <a routerLink="/cliente" class="register-link">
+      Volver al inicio
+    </a>
+  </section>
+</div>

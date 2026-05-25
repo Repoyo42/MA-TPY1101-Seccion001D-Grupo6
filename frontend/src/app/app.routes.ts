@@ -3,8 +3,8 @@ import { Routes } from '@angular/router';
 import { Login } from './pages/login/login';
 import { RegistroCliente } from './pages/registro-cliente/registro-cliente';
 import { RegistroTarotista } from './pages/registro-tarotista/registro-tarotista';
-import { PerfilTarotista } from './pages/perfil-tarotista/perfil-tarotista';
 import { Cliente } from './pages/cliente/cliente';
+import { MisEspecialidades } from './pages/mis-especialidades/mis-especialidades';
 
 export const routes: Routes = [
 
@@ -32,10 +32,9 @@ export const routes: Routes = [
     path: 'registro-tarotista',
     component: RegistroTarotista
   },
-
   {
-    path: 'perfil-tarotista',
-    component: PerfilTarotista
+  path: 'mis-especialidades',
+  component: MisEspecialidades
   }
 
 ];

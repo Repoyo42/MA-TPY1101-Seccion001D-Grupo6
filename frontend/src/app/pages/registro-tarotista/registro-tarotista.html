@@ -25,6 +25,22 @@
         placeholder="Ej: Luna Mística"
       />
 
+      <label for="descripcion">Descripción</label>
+      <textarea
+        id="descripcion"
+        [(ngModel)]="descripcion"
+        placeholder="Cuéntales a tus clientes cómo trabajas..."
+        rows="5"
+      ></textarea>
+
+      <label for="precioBase">Precio base</label>
+      <input
+        id="precioBase"
+        type="number"
+        [(ngModel)]="precioBase"
+        placeholder="Ej: 15000"
+      />
+
       <button type="button" (click)="registrar()" [disabled]="loading">
         {{ loading ? 'Guardando...' : 'Crear perfil' }}
       </button>
