@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" font-family="Arial, sans-serif">
+<rect width="1600" height="1000" fill="#1a0a2e"/>
+<text x="800" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#d4aaff">Mockups de Interfaz - ConectaTarot</text>
+
+<!-- ===== LOGIN ===== -->
+<text x="175" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#e8c3ff">Login</text>
+<rect x="30" y="76" width="290" height="420" rx="16" fill="#2d1654" stroke="#9b59b6" stroke-width="2"/>
+<rect x="30" y="76" width="290" height="50" rx="16" fill="#7d3cae"/>
+<rect x="30" y="106" width="290" height="20" fill="#7d3cae"/>
+<text x="175" y="107" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">ConectaTarot</text>
+<text x="175" y="162" text-anchor="middle" font-size="22">🔮</text>
+<text x="175" y="190" text-anchor="middle" font-size="14" font-weight="bold" fill="#d4aaff">Bienvenido</text>
+<text x="175" y="210" text-anchor="middle" font-size="11" fill="#9b59b6">Descubre tu destino</text>
+<rect x="55" y="224" width="240" height="36" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="75" y="247" font-size="12" fill="#7d3cae">Correo electronico</text>
+<rect x="55" y="272" width="240" height="36" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="75" y="295" font-size="12" fill="#7d3cae">Contrasena</text>
+<rect x="55" y="324" width="240" height="38" rx="20" fill="#7d3cae" stroke="none"/>
+<text x="175" y="348" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">Iniciar sesion</text>
+<text x="175" y="386" text-anchor="middle" font-size="11" fill="#9b59b6">Recuperar contrasena</text>
+<line x1="55" y1="396" x2="295" y2="396" stroke="#4a235a" stroke-width="1"/>
+<text x="175" y="416" text-anchor="middle" font-size="11" fill="#9b59b6">No tienes cuenta?</text>
+<text x="175" y="434" text-anchor="middle" font-size="12" font-weight="bold" fill="#d4aaff">Registrarse</text>
+<text x="175" y="470" text-anchor="middle" font-size="11" fill="#9b59b6">v1.0.0</text>
+
+<!-- ===== REGISTRO ===== -->
+<text x="490" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#e8c3ff">Registro</text>
+<rect x="345" y="76" width="290" height="500" rx="16" fill="#2d1654" stroke="#9b59b6" stroke-width="2"/>
+<rect x="345" y="76" width="290" height="50" rx="16" fill="#7d3cae"/>
+<rect x="345" y="106" width="290" height="20" fill="#7d3cae"/>
+<text x="490" y="107" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">Crear cuenta</text>
+<text x="490" y="152" text-anchor="middle" font-size="14" font-weight="bold" fill="#d4aaff">Registro</text>
+<rect x="370" y="166" width="240" height="36" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="390" y="189" font-size="12" fill="#7d3cae">Nombre completo</text>
+<rect x="370" y="214" width="240" height="36" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="390" y="237" font-size="12" fill="#7d3cae">Correo electronico</text>
+<rect x="370" y="262" width="240" height="36" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="390" y="285" font-size="12" fill="#7d3cae">Telefono</text>
+<rect x="370" y="310" width="240" height="36" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="390" y="333" font-size="12" fill="#7d3cae">Contrasena</text>
+<rect x="370" y="358" width="240" height="36" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="390" y="381" font-size="12" fill="#7d3cae">Confirmar contrasena</text>
+<rect x="370" y="408" width="240" height="36" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="490" y="431" text-anchor="middle" font-size="12" fill="#9b59b6">Tipo de cuenta: Cliente</text>
+<rect x="370" y="458" width="240" height="38" rx="20" fill="#7d3cae"/>
+<text x="490" y="482" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">Crear cuenta</text>
+<text x="490" y="524" text-anchor="middle" font-size="11" fill="#9b59b6">Ya tienes cuenta? Iniciar sesion</text>
+
+<!-- ===== LISTA TAROTISTAS ===== -->
+<text x="810" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#e8c3ff">Buscar Tarotistas</text>
+<rect x="660" y="76" width="300" height="560" rx="16" fill="#2d1654" stroke="#9b59b6" stroke-width="2"/>
+<rect x="660" y="76" width="300" height="50" rx="16" fill="#7d3cae"/>
+<rect x="660" y="106" width="300" height="20" fill="#7d3cae"/>
+<text x="810" y="107" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">Tarotistas</text>
+<rect x="680" y="138" width="260" height="34" rx="17" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="760" y="160" font-size="12" fill="#7d3cae">Buscar...</text>
+<text x="930" y="160" font-size="14" fill="#7d3cae">🔍</text>
+<rect x="680" y="184" width="260" height="30" rx="6" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1"/>
+<text x="770" y="203" font-size="11" fill="#9b59b6">Filtrar por especialidad</text>
+
+<!-- Card tarotista 1 -->
+<rect x="680" y="226" width="260" height="100" rx="10" fill="#1f0e3d" stroke="#6020aa" stroke-width="1.5"/>
+<ellipse cx="714" cy="266" rx="26" ry="26" fill="#7d3cae"/>
+<text x="714" y="272" text-anchor="middle" font-size="18">🌙</text>
+<text x="750" y="250" font-size="13" font-weight="bold" fill="#d4aaff">Luna Estrellada</text>
+<text x="750" y="268" font-size="11" fill="#9b59b6">Tarot Egipcio, Astrologia</text>
+<text x="750" y="284" font-size="11" fill="#60e090">★ 4.8</text>
+<text x="860" y="284" font-size="11" fill="#d4aaff">$15.000/hr</text>
+<rect x="750" y="294" width="80" height="22" rx="11" fill="#7d3cae"/>
+<text x="790" y="309" text-anchor="middle" font-size="11" fill="#fff">Ver perfil</text>
+
+<!-- Card tarotista 2 -->
+<rect x="680" y="338" width="260" height="100" rx="10" fill="#1f0e3d" stroke="#6020aa" stroke-width="1.5"/>
+<ellipse cx="714" cy="378" rx="26" ry="26" fill="#7d3cae"/>
+<text x="714" y="384" text-anchor="middle" font-size="18">✨</text>
+<text x="750" y="362" font-size="13" font-weight="bold" fill="#d4aaff">Cosmos Mistico</text>
+<text x="750" y="380" font-size="11" fill="#9b59b6">Tarot Clasico, Runas</text>
+<text x="750" y="396" font-size="11" fill="#60e090">★ 4.6</text>
+<text x="860" y="396" font-size="11" fill="#d4aaff">$12.000/hr</text>
+<rect x="750" y="406" width="80" height="22" rx="11" fill="#7d3cae"/>
+<text x="790" y="421" text-anchor="middle" font-size="11" fill="#fff">Ver perfil</text>
+
+<!-- Card tarotista 3 -->
+<rect x="680" y="450" width="260" height="100" rx="10" fill="#1f0e3d" stroke="#6020aa" stroke-width="1.5"/>
+<ellipse cx="714" cy="490" rx="26" ry="26" fill="#7d3cae"/>
+<text x="714" y="496" text-anchor="middle" font-size="18">🔮</text>
+<text x="750" y="474" font-size="13" font-weight="bold" fill="#d4aaff">Vidente Arcana</text>
+<text x="750" y="492" font-size="11" fill="#9b59b6">Tarot General</text>
+<text x="750" y="508" font-size="11" fill="#60e090">★ 4.9</text>
+<text x="860" y="508" font-size="11" fill="#d4aaff">$18.000/hr</text>
+<rect x="750" y="518" width="80" height="22" rx="11" fill="#7d3cae"/>
+<text x="790" y="533" text-anchor="middle" font-size="11" fill="#fff">Ver perfil</text>
+
+<!-- Nav bottom -->
+<rect x="660" y="596" width="300" height="40" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1"/>
+<text x="700" y="621" font-size="11" fill="#9b59b6">🏠 Inicio</text>
+<text x="780" y="621" font-size="11" fill="#d4aaff">🔮 Tarotistas</text>
+<text x="870" y="621" font-size="11" fill="#9b59b6">👤 Perfil</text>
+
+<!-- ===== AGENDAR SESION ===== -->
+<text x="1110" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#e8c3ff">Agendar Sesion</text>
+<rect x="990" y="76" width="300" height="580" rx="16" fill="#2d1654" stroke="#9b59b6" stroke-width="2"/>
+<rect x="990" y="76" width="300" height="50" rx="16" fill="#7d3cae"/>
+<rect x="990" y="106" width="300" height="20" fill="#7d3cae"/>
+<text x="1140" y="107" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">Agendar Sesion</text>
+<ellipse cx="1140" cy="176" rx="40" ry="40" fill="#7d3cae"/>
+<text x="1140" y="182" text-anchor="middle" font-size="28">🌙</text>
+<text x="1140" y="232" text-anchor="middle" font-size="14" font-weight="bold" fill="#d4aaff">Luna Estrellada</text>
+<text x="1140" y="250" text-anchor="middle" font-size="11" fill="#9b59b6">Tarot Egipcio | $15.000/hr</text>
+<line x1="1010" y1="264" x2="1270" y2="264" stroke="#4a235a" stroke-width="1"/>
+<text x="1010" y="286" font-size="12" font-weight="bold" fill="#d4aaff">Especialidad</text>
+<rect x="1010" y="296" width="260" height="34" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="1100" y="318" font-size="12" fill="#9b59b6">Seleccionar...</text>
+<text x="1010" y="350" font-size="12" font-weight="bold" fill="#d4aaff">Fecha y hora</text>
+<rect x="1010" y="360" width="260" height="34" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="1090" y="382" font-size="12" fill="#9b59b6">DD/MM/AAAA HH:MM</text>
+<text x="1010" y="414" font-size="12" font-weight="bold" fill="#d4aaff">Duracion</text>
+<rect x="1010" y="424" width="260" height="34" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="1090" y="446" font-size="12" fill="#9b59b6">60 minutos</text>
+<line x1="1010" y1="474" x2="1270" y2="474" stroke="#4a235a" stroke-width="1"/>
+<text x="1010" y="494" font-size="12" font-weight="bold" fill="#d4aaff">Resumen</text>
+<text x="1010" y="514" font-size="11" fill="#9b59b6">Tarotista: Luna Estrellada</text>
+<text x="1010" y="530" font-size="11" fill="#9b59b6">Fecha: Lunes 01/06/2026 15:00</text>
+<text x="1010" y="546" font-size="11" fill="#9b59b6">Duracion: 60 min</text>
+<text x="1010" y="562" font-size="13" font-weight="bold" fill="#d4aaff">Total: $15.000</text>
+<rect x="1010" y="578" width="260" height="38" rx="20" fill="#7d3cae"/>
+<text x="1140" y="602" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">Confirmar y Pagar</text>
+<rect x="1010" y="628" width="260" height="14" rx="4" fill="#1f0e3d"/>
+<text x="1140" y="640" text-anchor="middle" font-size="11" fill="#6020aa">Cancelar</text>
+
+<!-- ===== PANEL ADMIN ===== -->
+<text x="1430" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#e8c3ff">Panel Admin</text>
+<rect x="1320" y="76" width="260" height="580" rx="16" fill="#2d1654" stroke="#9b59b6" stroke-width="2"/>
+<rect x="1320" y="76" width="260" height="50" rx="16" fill="#7d3cae"/>
+<rect x="1320" y="106" width="260" height="20" fill="#7d3cae"/>
+<text x="1450" y="107" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">Panel Admin</text>
+<text x="1340" y="148" font-size="12" font-weight="bold" fill="#d4aaff">Bienvenido, Admin</text>
+<text x="1340" y="164" font-size="11" fill="#9b59b6">admin@conectatarot.com</text>
+<line x1="1340" y1="174" x2="1560" y2="174" stroke="#4a235a" stroke-width="1"/>
+
+<!-- Menu items -->
+<rect x="1340" y="186" width="220" height="44" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="1370" y="204" font-size="13">👥</text>
+<text x="1396" y="204" font-size="12" font-weight="bold" fill="#d4aaff">Usuarios</text>
+<text x="1396" y="220" font-size="11" fill="#9b59b6">Gestionar cuentas</text>
+
+<rect x="1340" y="242" width="220" height="44" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="1370" y="260" font-size="13">🔮</text>
+<text x="1396" y="260" font-size="12" font-weight="bold" fill="#d4aaff">Tarotistas</text>
+<text x="1396" y="276" font-size="11" fill="#9b59b6">Aprobar / Rechazar</text>
+
+<rect x="1340" y="298" width="220" height="44" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="1370" y="316" font-size="13">✨</text>
+<text x="1396" y="316" font-size="12" font-weight="bold" fill="#d4aaff">Especialidades</text>
+<text x="1396" y="332" font-size="11" fill="#9b59b6">Gestionar catalogo</text>
+
+<rect x="1340" y="354" width="220" height="44" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="1370" y="372" font-size="13">📅</text>
+<text x="1396" y="372" font-size="12" font-weight="bold" fill="#d4aaff">Sesiones</text>
+<text x="1396" y="388" font-size="11" fill="#9b59b6">Ver todas las sesiones</text>
+
+<rect x="1340" y="410" width="220" height="44" rx="8" fill="#1f0e3d" stroke="#7d3cae" stroke-width="1.5"/>
+<text x="1370" y="428" font-size="13">💰</text>
+<text x="1396" y="428" font-size="12" font-weight="bold" fill="#d4aaff">Reportes</text>
+<text x="1396" y="444" font-size="11" fill="#9b59b6">Financieros y estadisticas</text>
+
+<line x1="1340" y1="466" x2="1560" y2="466" stroke="#4a235a" stroke-width="1"/>
+
+<!-- Stats -->
+<text x="1340" y="486" font-size="12" font-weight="bold" fill="#d4aaff">Resumen del sistema</text>
+<rect x="1340" y="496" width="100" height="60" rx="8" fill="#1f0e3d" stroke="#6020aa" stroke-width="1"/>
+<text x="1390" y="518" text-anchor="middle" font-size="20" font-weight="bold" fill="#d4aaff">3</text>
+<text x="1390" y="538" text-anchor="middle" font-size="10" fill="#9b59b6">Usuarios</text>
+<rect x="1460" y="496" width="100" height="60" rx="8" fill="#1f0e3d" stroke="#6020aa" stroke-width="1"/>
+<text x="1510" y="518" text-anchor="middle" font-size="20" font-weight="bold" fill="#d4aaff">1</text>
+<text x="1510" y="538" text-anchor="middle" font-size="10" fill="#9b59b6">Tarotistas</text>
+<rect x="1340" y="570" width="100" height="60" rx="8" fill="#1f0e3d" stroke="#6020aa" stroke-width="1"/>
+<text x="1390" y="592" text-anchor="middle" font-size="20" font-weight="bold" fill="#d4aaff">4</text>
+<text x="1390" y="612" text-anchor="middle" font-size="10" fill="#9b59b6">Sesiones</text>
+<rect x="1460" y="570" width="100" height="60" rx="8" fill="#1f0e3d" stroke="#6020aa" stroke-width="1"/>
+<text x="1510" y="592" text-anchor="middle" font-size="20" font-weight="bold" fill="#d4aaff">1</text>
+<text x="1510" y="612" text-anchor="middle" font-size="10" fill="#9b59b6">Especialidades</text>
+
+<!-- LABELS debajo -->
+<text x="175" y="530" text-anchor="middle" font-size="11" fill="#7d3cae">Implementado</text>
+<text x="490" y="608" text-anchor="middle" font-size="11" fill="#7d3cae">Por implementar</text>
+<text x="810" y="668" text-anchor="middle" font-size="11" fill="#7d3cae">Por implementar</text>
+<text x="1140" y="696" text-anchor="middle" font-size="11" fill="#7d3cae">Por implementar</text>
+<text x="1450" y="696" text-anchor="middle" font-size="11" fill="#7d3cae">Por implementar</text>
+
+<!-- Titulo leyenda -->
+<rect x="30" y="870" width="700" height="110" rx="8" fill="#1f0e3d" stroke="#9b59b6" stroke-width="1.5"/>
+<text x="380" y="894" text-anchor="middle" font-size="13" font-weight="bold" fill="#d4aaff">Estado de implementacion</text>
+<rect x="50" y="906" width="16" height="16" rx="3" fill="#7d3cae"/>
+<text x="76" y="919" font-size="12" fill="#e8c3ff">Implementado en frontend actual</text>
+<rect x="300" y="906" width="16" height="16" rx="3" fill="#3d1654" stroke="#7d3cae" stroke-width="1"/>
+<text x="326" y="919" font-size="12" fill="#e8c3ff">Disenado - pendiente de desarrollo</text>
+<text x="50" y="950" font-size="11" fill="#9b59b6">Stack: Angular + TypeScript | Diseno responsivo (mobile-first) | Accesibilidad WCAG 2.1</text>
+<text x="50" y="968" font-size="11" fill="#9b59b6">Paleta: Purpura oscuro #1a0a2e | Acento #7d3cae | Texto #d4aaff | Fondo tarjetas #2d1654</text>
+</svg>

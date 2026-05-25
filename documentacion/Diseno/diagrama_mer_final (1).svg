@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1050" width="1500" height="1050" font-family="Arial, sans-serif">
+  <rect width="1500" height="1050" fill="#1a0a2e"/>
+  <text x="750" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#d4aaff">Modelo Entidad-Relacion (MER) - ConectaTarot</text>
+
+  <rect x="60" y="70" width="220" height="130" fill="#2d1654" stroke="#d4aaff" stroke-width="2.5"/>
+  <rect x="60" y="70" width="220" height="36" fill="#7d3cae"/>
+  <text x="170" y="94" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">ROL</text>
+  <line x1="60" y1="106" x2="280" y2="106" stroke="#9b59b6" stroke-width="1"/>
+  <text x="70" y="128" font-size="12" fill="#f0c0ff">idRol (PK)</text>
+  <text x="70" y="148" font-size="12" fill="#d4aaff">nombreRol</text>
+  <text x="70" y="168" font-size="12" fill="#a080c0">ADMIN / CLIENTE / TAROTISTA</text>
+
+  <rect x="60" y="320" width="220" height="210" fill="#2d1654" stroke="#d4aaff" stroke-width="2.5"/>
+  <rect x="60" y="320" width="220" height="36" fill="#7d3cae"/>
+  <text x="170" y="344" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">USUARIO</text>
+  <line x1="60" y1="356" x2="280" y2="356" stroke="#9b59b6" stroke-width="1"/>
+  <text x="70" y="378" font-size="12" fill="#f0c0ff">idUsuario (PK)</text>
+  <text x="70" y="398" font-size="12" fill="#d4aaff">nombre</text>
+  <text x="70" y="418" font-size="12" fill="#d4aaff">email (UNIQUE)</text>
+  <text x="70" y="438" font-size="12" fill="#d4aaff">password</text>
+  <text x="70" y="458" font-size="12" fill="#d4aaff">fechaRegistro</text>
+  <text x="70" y="478" font-size="12" fill="#d4aaff">activo</text>
+  <text x="70" y="500" font-size="12" fill="#f0c0ff">rol_idRol (FK)</text>
+
+  <rect x="560" y="270" width="240" height="230" fill="#2d1654" stroke="#d4aaff" stroke-width="2.5"/>
+  <rect x="560" y="270" width="240" height="36" fill="#7d3cae"/>
+  <text x="680" y="294" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">TAROTISTA</text>
+  <line x1="560" y1="306" x2="800" y2="306" stroke="#9b59b6" stroke-width="1"/>
+  <text x="570" y="328" font-size="12" fill="#f0c0ff">id (PK)</text>
+  <text x="570" y="348" font-size="12" fill="#d4aaff">nombreProfesional</text>
+  <text x="570" y="368" font-size="12" fill="#d4aaff">descripcion</text>
+  <text x="570" y="388" font-size="12" fill="#d4aaff">precioBase</text>
+  <text x="570" y="408" font-size="12" fill="#d4aaff">estado</text>
+  <text x="570" y="428" font-size="12" fill="#d4aaff">fechaCreacion</text>
+  <text x="570" y="450" font-size="12" fill="#f0c0ff">usuario_id (FK, UNIQUE)</text>
+
+  <rect x="1140" y="270" width="230" height="150" fill="#2d1654" stroke="#d4aaff" stroke-width="2.5"/>
+  <rect x="1140" y="270" width="230" height="36" fill="#7d3cae"/>
+  <text x="1255" y="294" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">ESPECIALIDAD</text>
+  <line x1="1140" y1="306" x2="1370" y2="306" stroke="#9b59b6" stroke-width="1"/>
+  <text x="1150" y="328" font-size="12" fill="#f0c0ff">id (PK)</text>
+  <text x="1150" y="348" font-size="12" fill="#d4aaff">nombre (UNIQUE)</text>
+  <text x="1150" y="368" font-size="12" fill="#d4aaff">descripcion</text>
+  <text x="1150" y="388" font-size="12" fill="#d4aaff">activa</text>
+
+  <rect x="870" y="560" width="260" height="130" fill="#3d1a6d" stroke="#c080ff" stroke-width="2.5" stroke-dasharray="8,3"/>
+  <rect x="870" y="560" width="260" height="36" fill="#6020aa"/>
+  <text x="1000" y="580" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">TAROTISTA_ESPECIALIDAD</text>
+  <text x="1000" y="594" text-anchor="middle" font-size="10" fill="#c0a0ff">entidad intermedia N:M</text>
+  <line x1="870" y1="600" x2="1130" y2="600" stroke="#9b59b6" stroke-width="1"/>
+  <text x="880" y="622" font-size="12" fill="#f0c0ff">id (PK)</text>
+  <text x="880" y="642" font-size="12" fill="#f0c0ff">tarotista_id (FK)</text>
+  <text x="880" y="662" font-size="12" fill="#f0c0ff">especialidad_id (FK)</text>
+  <text x="880" y="682" font-size="12" fill="#a080c0">UNIQUE(tarotista_id, esp_id)</text>
+
+  <rect x="540" y="790" width="260" height="230" fill="#2d1654" stroke="#d4aaff" stroke-width="2.5"/>
+  <rect x="540" y="790" width="260" height="36" fill="#7d3cae"/>
+  <text x="670" y="814" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">SESION</text>
+  <line x1="540" y1="826" x2="800" y2="826" stroke="#9b59b6" stroke-width="1"/>
+  <text x="550" y="848" font-size="12" fill="#f0c0ff">id (PK)</text>
+  <text x="550" y="868" font-size="12" fill="#f0c0ff">usuario_id (FK)</text>
+  <text x="550" y="888" font-size="12" fill="#f0c0ff">tarotista_id (FK)</text>
+  <text x="550" y="908" font-size="12" fill="#f0c0ff">especialidad_id (FK)</text>
+  <text x="550" y="928" font-size="12" fill="#d4aaff">fecha</text>
+  <text x="550" y="948" font-size="12" fill="#d4aaff">duracionMinutos</text>
+  <text x="550" y="968" font-size="12" fill="#d4aaff">precioTotal</text>
+  <text x="550" y="988" font-size="12" fill="#d4aaff">estado</text>
+
+  <rect x="60" y="710" width="240" height="190" fill="#2d1654" stroke="#d4aaff" stroke-width="2.5"/>
+  <rect x="60" y="710" width="240" height="36" fill="#7d3cae"/>
+  <text x="180" y="730" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">DISPONIBILIDAD_TAROTISTA</text>
+  <line x1="60" y1="746" x2="300" y2="746" stroke="#9b59b6" stroke-width="1"/>
+  <text x="70" y="768" font-size="12" fill="#f0c0ff">id (PK)</text>
+  <text x="70" y="788" font-size="12" fill="#f0c0ff">tarotista_id (FK)</text>
+  <text x="70" y="808" font-size="12" fill="#d4aaff">diaSemana</text>
+  <text x="70" y="828" font-size="12" fill="#d4aaff">horaInicio</text>
+  <text x="70" y="848" font-size="12" fill="#d4aaff">horaFin</text>
+  <text x="70" y="868" font-size="12" fill="#d4aaff">activa</text>
+
+  <polygon points="170,230 220,260 170,290 120,260" fill="#1f0e3d" stroke="#e8c3ff" stroke-width="2"/>
+  <text x="170" y="265" text-anchor="middle" font-size="12" font-weight="bold" fill="#e8c3ff">TIENE</text>
+
+  <polygon points="410,420 460,450 410,480 360,450" fill="#1f0e3d" stroke="#e8c3ff" stroke-width="2"/>
+  <text x="410" y="455" text-anchor="middle" font-size="12" font-weight="bold" fill="#e8c3ff">ES</text>
+
+  <polygon points="360,870 410,900 360,930 310,900" fill="#1f0e3d" stroke="#e8c3ff" stroke-width="2"/>
+  <text x="360" y="905" text-anchor="middle" font-size="12" font-weight="bold" fill="#e8c3ff">AGENDA</text>
+
+  <polygon points="680,690 730,720 680,750 630,720" fill="#1f0e3d" stroke="#e8c3ff" stroke-width="2"/>
+  <text x="680" y="725" text-anchor="middle" font-size="12" font-weight="bold" fill="#e8c3ff">ATIENDE</text>
+
+  <polygon points="310,800 360,825 310,850 260,825" fill="#1f0e3d" stroke="#e8c3ff" stroke-width="2"/>
+  <text x="310" y="830" text-anchor="middle" font-size="12" font-weight="bold" fill="#e8c3ff">DEFINE</text>
+
+  <polygon points="840,490 890,520 840,550 790,520" fill="#1f0e3d" stroke="#c080ff" stroke-width="2"/>
+  <text x="840" y="525" text-anchor="middle" font-size="11" font-weight="bold" fill="#c080ff">CLASIFICA</text>
+
+  <polygon points="1130,490 1180,520 1130,550 1080,520" fill="#1f0e3d" stroke="#c080ff" stroke-width="2"/>
+  <text x="1130" y="525" text-anchor="middle" font-size="11" font-weight="bold" fill="#c080ff">PERTENECE</text>
+
+  <line x1="170" y1="200" x2="170" y2="230" stroke="#e8c3ff" stroke-width="1.5"/>
+  <text x="182" y="222" font-size="11" font-weight="bold" fill="#fff">(1,1)</text>
+  <line x1="170" y1="290" x2="170" y2="320" stroke="#e8c3ff" stroke-width="1.5"/>
+  <text x="182" y="312" font-size="11" font-weight="bold" fill="#fff">(0,N)</text>
+
+  <line x1="280" y1="425" x2="360" y2="450" stroke="#e8c3ff" stroke-width="1.5"/>
+  <text x="286" y="438" font-size="11" font-weight="bold" fill="#fff">(1,1)</text>
+  <line x1="460" y1="450" x2="560" y2="420" stroke="#e8c3ff" stroke-width="1.5"/>
+  <text x="466" y="440" font-size="11" font-weight="bold" fill="#fff">(0,1)</text>
+
+  <line x1="170" y1="530" x2="170" y2="900" stroke="#e8c3ff" stroke-width="1.5"/>
+  <line x1="170" y1="900" x2="310" y2="900" stroke="#e8c3ff" stroke-width="1.5"/>
+  <text x="182" y="710" font-size="11" font-weight="bold" fill="#fff">(1,1)</text>
+  <line x1="410" y1="900" x2="540" y2="900" stroke="#e8c3ff" stroke-width="1.5"/>
+  <text x="416" y="892" font-size="11" font-weight="bold" fill="#fff">(0,N)</text>
+
+  <line x1="680" y1="500" x2="680" y2="690" stroke="#e8c3ff" stroke-width="1.5"/>
+  <text x="692" y="600" font-size="11" font-weight="bold" fill="#fff">(1,1)</text>
+  <line x1="680" y1="750" x2="680" y2="790" stroke="#e8c3ff" stroke-width="1.5"/>
+  <text x="692" y="778" font-size="11" font-weight="bold" fill="#fff">(0,N)</text>
+
+  <line x1="560" y1="385" x2="360" y2="825" stroke="#e8c3ff" stroke-width="1.5"/>
+  <text x="510" y="430" font-size="11" font-weight="bold" fill="#fff">(1,1)</text>
+  <line x1="260" y1="825" x2="180" y2="825" stroke="#e8c3ff" stroke-width="1.5"/>
+  <text x="192" y="817" font-size="11" font-weight="bold" fill="#fff">(0,N)</text>
+
+  <line x1="800" y1="385" x2="840" y2="490" stroke="#c080ff" stroke-width="1.5"/>
+  <text x="808" y="420" font-size="11" font-weight="bold" fill="#c080ff">(1,N)</text>
+  <line x1="840" y1="550" x2="880" y2="590" stroke="#c080ff" stroke-width="1.5"/>
+  <text x="848" y="580" font-size="11" font-weight="bold" fill="#c080ff">(0,N)</text>
+
+  <line x1="1200" y1="420" x2="1180" y2="490" stroke="#c080ff" stroke-width="1.5"/>
+  <text x="1190" y="450" font-size="11" font-weight="bold" fill="#c080ff">(1,N)</text>
+  <line x1="1130" y1="550" x2="1100" y2="590" stroke="#c080ff" stroke-width="1.5"/>
+  <text x="1108" y="580" font-size="11" font-weight="bold" fill="#c080ff">(0,N)</text>
+
+  <rect x="1100" y="730" width="360" height="230" rx="8" fill="#1f0e3d" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="1280" y="756" text-anchor="middle" font-size="14" font-weight="bold" fill="#d4aaff">Leyenda</text>
+  <rect x="1120" y="772" width="50" height="28" fill="#2d1654" stroke="#d4aaff" stroke-width="2"/>
+  <text x="1182" y="791" font-size="12" fill="#e8c3ff">Entidad</text>
+  <rect x="1120" y="812" width="50" height="28" fill="#3d1a6d" stroke="#c080ff" stroke-width="2" stroke-dasharray="6,2"/>
+  <text x="1182" y="831" font-size="12" fill="#c080ff">Entidad intermedia N:M</text>
+  <polygon points="1145,858 1170,874 1145,890 1120,874" fill="#1f0e3d" stroke="#e8c3ff" stroke-width="2"/>
+  <text x="1182" y="878" font-size="12" fill="#e8c3ff">Relacion (rombo)</text>
+  <text x="1120" y="912" font-size="11" font-weight="bold" fill="#fff">(1,1) -- (0,N)</text>
+  <text x="1230" y="912" font-size="12" fill="#e8c3ff">Cardinalidad formal</text>
+  <text x="1120" y="934" font-size="12" fill="#f0c0ff">PK = Clave primaria</text>
+  <text x="1120" y="952" font-size="12" fill="#f0c0ff">FK = Clave foranea</text>
+</svg>
