@@ -5,6 +5,7 @@ import { RegistroCliente } from './pages/registro-cliente/registro-cliente';
 import { RegistroTarotista } from './pages/registro-tarotista/registro-tarotista';
 import { Cliente } from './pages/cliente/cliente';
 import { MisEspecialidades } from './pages/mis-especialidades/mis-especialidades';
+import { Tarotista } from './pages/tarotista/tarotista';
 
 export const routes: Routes = [
 
@@ -35,6 +36,10 @@ export const routes: Routes = [
   {
   path: 'mis-especialidades',
   component: MisEspecialidades
+  },
+  {
+  path: 'tarotista',
+  component: Tarotista
   }
 
 ];

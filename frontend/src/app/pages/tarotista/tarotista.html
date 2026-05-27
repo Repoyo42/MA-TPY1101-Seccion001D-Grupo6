@@ -1,0 +1,88 @@
+<div class="tarotista-page">
+
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <header class="topbar">
+
+    <h1 class="logo">
+      🔮 Conecta Tarot
+    </h1>
+
+    <div class="menu-container">
+
+      <button
+        class="menu-button"
+        (click)="toggleMenu()"
+      >
+        ☰
+      </button>
+
+      <div
+        class="dropdown-menu"
+        *ngIf="menuOpen"
+      >
+
+        <p class="menu-user">
+          {{ user?.nombre }}
+        </p>
+
+        <p class="menu-email">
+          {{ user?.email }}
+        </p>
+
+        <hr>
+
+        <button
+          class="menu-action"
+          routerLink="/mis-sesiones"
+        >
+          Mis sesiones
+        </button>
+
+        <button
+          class="menu-action"
+          routerLink="/disponibilidad"
+        >
+          Mi disponibilidad
+        </button>
+
+        <button
+          class="menu-action"
+          routerLink="/perfil-tarotista"
+        >
+          Mi perfil
+        </button>
+
+        <button
+          class="logout-button"
+          (click)="logout()"
+        >
+          Cerrar sesión
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="content">
+
+    <section class="welcome-card">
+
+      <h2>Bienvenido Tarotista</h2>
+
+      <p class="welcome-name">
+        {{ user?.nombre }}
+      </p>
+
+      <p class="welcome-text">
+        Administra tus sesiones y disponibilidad.
+      </p>
+
+    </section>
+
+  </main>
+
+</div>

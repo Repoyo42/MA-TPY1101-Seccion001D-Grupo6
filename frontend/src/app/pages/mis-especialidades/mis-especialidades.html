@@ -12,14 +12,6 @@
     <h1>Mis especialidades</h1>
     <p class="subtitle">Selecciona las categorías que mejor describen tu lectura</p>
 
-    <p class="user-info" *ngIf="user">
-      Hola, <strong>{{ user.nombre }}</strong>
-    </p>
-
-    <p class="counter" *ngIf="especialidades.length">
-      Seleccionadas: <strong>{{ seleccionadas.size }}</strong>
-    </p>
-
     <div *ngIf="cargando" class="loading-text">
       Cargando especialidades...
     </div>
@@ -65,9 +57,5 @@
     <p class="register-text">
       Puedes volver al inicio cuando termines.
     </p>
-
-    <a routerLink="/cliente" class="register-link">
-      Volver al inicio
-    </a>
   </section>
 </div>
