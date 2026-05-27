@@ -1,0 +1,12 @@
+INTEGRANTES DEL EQUIPO - GRUPO 6
+Asignatura: MA-TPY1101
+Seccion: 001D
+Institucion: DUOC UC
+
+Integrantes:
+- P. Rebolledo
+- O. Clavijo
+- R. Gaete
+
+Lider de equipo / Administrador del repositorio: matiastiznado9
+Repositorio: https://github.com/matiastiznado9/MA-TPY1101-Seccion001D-Grupo6
